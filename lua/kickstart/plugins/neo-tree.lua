@@ -11,15 +11,32 @@ return {
   },
   cmd = 'Neotree',
   keys = {
+    { '<leader>n', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
     { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
     filesystem = {
       window = {
+        width = 28,
         mappings = {
+          ['<leader>n'] = 'close_window',
           ['\\'] = 'close_window',
         },
       },
+      filtered_items = {
+        hide_by_name = {
+          'node_modules',
+        },
+      },
+      follow_current_file = {
+        enabled = true,
+        leave_dirs_open = true,
+      },
+      --use_libuv_file_watcher = true,
+    }, -- end filesystem
+    source_selector = {
+      winbar = true,
+      statusline = false,
     },
   },
 }
