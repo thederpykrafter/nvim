@@ -3,7 +3,6 @@ return { -- Transparent
   config = function()
     require('transparent').clear_prefix 'NeoTree'
     require('transparent').clear_prefix 'Telescope'
-    -- require('transparent').clear_prefix ''
     require('transparent').clear_prefix 'MiniStatusline'
     require('transparent').setup {
       groups = { -- table: default groups
