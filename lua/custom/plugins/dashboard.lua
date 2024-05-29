@@ -134,7 +134,7 @@ return {
               desc = 'NeoVim Config',
               key = 'c',
               key_format = ' %s', -- remove default surrounding `[]`
-              action = 'Telescope find_files cwd=C:/Users/thede/AppData/Local/nvim',
+              action = 'Telescope find_files cwd=~/.config/nvim',
             },
             {
               icon = '░  ',
