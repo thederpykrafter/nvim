@@ -127,7 +127,7 @@ return {
               key = 'n',
               key_format = ' %s', -- remove default surrounding `[]`
               -- action = "lua require'telescope.builtin'.find_files({})",
-              action = 'Telescope find_files no_ignore=true cwd=C:/Users/thede/Dropbox/Apps/remotely-save/Notes',
+              action = 'Telescope find_files no_ignore=true cwd=~/Documents/Notes',
             },
             {
               icon = '  ',
