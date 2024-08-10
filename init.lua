@@ -78,6 +78,10 @@ vim.opt.breakindent = true
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- Todo-comments
+vim.keymap.set('n', '<leader>st', '<cmd>TodoTelescope<cr>', { desc = '[S]earch [T]odo Telescope' })
+vim.keymap.set('n', '<leader>sl', '<cmd>TodoLocList<cr>', { desc = '[S]earch Todo [L]ocList' })
+
 -- Oil
 vim.keymap.set('n', '<leader>e', '<cmd>Oil<cr>', { desc = 'Oil' })
 -- open config with Oil
