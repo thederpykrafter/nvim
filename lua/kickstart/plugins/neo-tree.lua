@@ -11,7 +11,6 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '<leader>n', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
     { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
@@ -19,7 +18,6 @@ return {
       window = {
         width = 28,
         mappings = {
-          ['<leader>n'] = 'close_window',
           ['\\'] = 'close_window',
         },
       },
