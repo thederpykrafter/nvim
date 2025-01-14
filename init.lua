@@ -609,7 +609,7 @@ require('lazy').setup({
       },
       formatters = {
         beautysh = {
-          prepend_args = { '-i', '2' },
+          prepend_args = { '-i', '2', '-s', 'fnpar' },
         },
       },
     },
