@@ -600,6 +600,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         zsh = { 'beautysh' },
         bash = { 'beautysh' },
+        sh = { 'beautysh' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
