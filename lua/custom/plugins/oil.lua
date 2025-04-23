@@ -16,7 +16,6 @@ return {
       ['~'] = { 'actions.cd', opts = { scope = 'tab' }, mode = 'n' },
       ['gs'] = { 'actions.change_sort', mode = 'n' },
       ['gx'] = 'actions.open_external',
-      ['g\\'] = { 'actions.toggle_trash', mode = 'n' },
     },
     use_default_keymaps = false,
   },
