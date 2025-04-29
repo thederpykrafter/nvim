@@ -534,7 +534,7 @@ require('lazy').setup({
                 callSnippet = 'Replace',
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
+              diagnostics = { disable = { 'missing-fields' } },
             },
           },
         },
@@ -553,6 +553,8 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'zls',
+        'bash-language-server',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -609,6 +611,9 @@ require('lazy').setup({
         -- javascript = { { "prettierd", "prettier" } },
       },
       formatters = {
+        stylua = {
+          prepend_args = { '--config', '~/.config/nvim/stylua.toml' },
+        },
         beautysh = {
           prepend_args = { '-i', '2', '-s', 'fnpar' },
         },
