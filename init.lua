@@ -973,7 +973,7 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 		dependencies = { "rktjmp/lush.nvim" },
-		config = function() vim.cmd "colorscheme bluloco" end,
+		config = function() vim.cmd.colorscheme "bluloco" end,
 	},
 
 	-- Highlight todo, notes, etc in comments
