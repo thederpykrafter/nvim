@@ -71,9 +71,12 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
-vim.opt.expandtab = true
+-- expand tabs into spaces if true
+vim.opt.expandtab = false
+--set tab spacing size
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
+-- word wrap with indent
 vim.opt.breakindent = true
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -834,7 +837,7 @@ require("lazy").setup({
 					},
 				},
 				beautysh = {
-					prepend_args = { "-i", "2", "-s", "fnpar" },
+					prepend_args = { "-t", "-s", "fnpar" },
 				},
 			},
 		},
