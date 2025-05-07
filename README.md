@@ -1,3 +1,4 @@
+[![wakatime](https://wakatime.com/badge/github/thederpykrafter/nvim.svg)](https://wakatime.com/badge/github/thederpykrafter/nvim)
 # kickstart.nvim
 
 ## Introduction
