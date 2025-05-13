@@ -1,37 +1,11 @@
-local headers = {
-	{
-		"                                 ",
-		"                                 ",
-		"┏┳┓┓┏┏┓┳┓┏┓┳┓┏┓┓┏┓┏┓┳┓┏┓┏┓┏┳┓┏┓┳┓",
-		" ┃ ┣┫┣ ┃┃┣ ┣┫┃┃┗┫┃┫ ┣┫┣┫┣  ┃ ┣ ┣┫",
-		" ┻ ┛┗┗┛┻┛┗┛┛┗┣┛┗┛┛┗┛┛┗┛┗┻  ┻ ┗┛┛┗",
-		"                                 ",
-		"                                 ",
-	},
-	{
-		"                                             ",
-		"                                             ",
-		"                                             ",
-		"                                             ",
-		"┌┬┐┬ ┬┌─┐┌┬┐┌─┐┬─┐┌─┐┬ ┬┬┌─┬─┐┌─┐┌─┐┌┬┐┌─┐┬─┐",
-		" │ ├─┤├┤  ││├┤ ├┬┘├─┘└┬┘├┴┐├┬┘├─┤├┤  │ ├┤ ├┬┘",
-		" ┴ ┴ ┴└─┘─┴┘└─┘┴└─┴   ┴ ┴ ┴┴└─┴ ┴└   ┴ └─┘┴└─",
-		"                                             ",
-		"                                             ",
-	},
-	{
-		"                                  ",
-		"    ███     ████████▄     ▄█   ▄█▄",
-		"▀█████████▄ ███   ▀███   ███ ▄███▀",
-		"   ▀███▀▀██ ███    ███   ███▐██▀  ",
-		"    ███   ▀ ███    ███  ▄█████▀   ",
-		"    ███     ███    ███ ▀▀█████▄   ",
-		"    ███     ███    ███   ███▐██▄  ",
-		"    ███     ███   ▄███   ███ ▀███▄",
-		"   ▄████▀   ████████▀    ███   ▀█▀",
-		"                         ▀        ",
-		"                                  ",
-	},
+local header = {
+	"                                 ",
+	"                                 ",
+	"┏┳┓┓┏┏┓┳┓┏┓┳┓┏┓┓┏┓┏┓┳┓┏┓┏┓┏┳┓┏┓┳┓",
+	" ┃ ┣┫┣ ┃┃┣ ┣┫┃┃┗┫┃┫ ┣┫┣┫┣  ┃ ┣ ┣┫",
+	" ┻ ┛┗┗┛┻┛┗┛┛┗┣┛┗┛┛┗┛┛┗┛┗┻  ┻ ┗┛┛┗",
+	"                                 ",
+	"                                 ",
 }
 
 return {
@@ -39,21 +13,21 @@ return {
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
 		config = function()
-			require("dashboard").setup {
-				vim.keymap.set(
-					"n",
-					"<leader>;",
-					"<cmd>Dashboard<CR>",
-					{ desc = "[;]Dashboard" }
-				),
+			vim.keymap.set(
+				"n",
+				"<leader>;",
+				"<cmd>Dashboard<CR>",
+				{ desc = "Dashboard" }
+			)
+			require("dashboard").setup({
 				theme = "doom",
 				config = {
-					vim.cmd "hi DashboardHeader guifg=#7781da",
-					vim.cmd "hi DashboardIcon guifg=#0D5C63",
-					vim.cmd "hi DashboardDesc guifg=#D7D9CE",
-					vim.cmd "hi DashboardKey guifg=#ff8700",
-					vim.cmd "hi DashboardFooter guifg=#00FFCD",
-					header = headers[1], -- change header here
+					vim.cmd("hi DashboardHeader guifg=#7781da"),
+					vim.cmd("hi DashboardIcon guifg=#0D5C63"),
+					vim.cmd("hi DashboardDesc guifg=#D7D9CE"),
+					vim.cmd("hi DashboardKey guifg=#ff8700"),
+					vim.cmd("hi DashboardFooter guifg=#00FFCD"),
+					header = header, -- change header here
 					center = {
 						{
 							icon = "  ",
@@ -92,18 +66,35 @@ return {
 						},
 						{
 							icon = "  ",
-							desc = "Notes",
+							desc = "Desktop Notes",
 							key = "n",
 							key_format = " %s", -- remove default surrounding `[]`
 							-- action = "lua require'telescope.builtin'.find_files({})",
-							action = "Telescope find_files no_ignore=true cwd=~/Documents/Notes",
+							action = "Oil ~/Documents/Notes",
+						},
+						{
+							icon = "  ",
+							desc = "Termux Notes",
+							key = "N",
+							key_format = " %s", -- remove default surrounding `[]`
+							-- action = "lua require'telescope.builtin'.find_files({})",
+							action = "Oil ~/storage/shared/Documents/Notes",
 						},
 						{
 							icon = "  ",
 							desc = "NeoVim Config",
 							key = "c",
 							key_format = " %s", -- remove default surrounding `[]`
-							action = "Telescope find_files cwd=~/.config/nvim",
+							--action = 'Telescope find_files cwd=~/.config/nvim',
+							action = "Oil ~/.config/nvim",
+						},
+						{
+							icon = "  ",
+							desc = "Termux NeoVim Config",
+							key = "C",
+							key_format = " %s", -- remove default surrounding `[]`
+							--action = 'Telescope find_files cwd=~/.config/nvim',
+							action = "Oil ~/.config/termux-nvim",
 						},
 						{
 							icon = "░  ",
@@ -119,6 +110,13 @@ return {
 							key_format = " %s",
 							action = "qa",
 						},
+						{
+							icon = "󰩈  ",
+							desc = "Close dashboard",
+							key = "Q",
+							key_format = " %s",
+							action = "b#",
+						},
 					},
 					footer = function()
 						local stats = require("lazy").stats()
@@ -127,17 +125,17 @@ return {
 						)
 						return {
 							"",
-							"⚡ Neovim loaded "
+							"⌛"
 								.. stats.loaded
 								.. "/"
 								.. stats.count
-								.. " plugins in "
-								.. ms
-								.. "ms",
+								.. " plugins"
+								.. "⌛",
+							"loaded in " .. ms .. "ms",
 						}
 					end, --your footer
 				},
-			}
+			})
 		end,
 		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	},
