@@ -1,30 +1,30 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.mouse = "a"
-vim.opt.showmode = false
-vim.opt.clipboard = "unnamedplus"
-vim.opt.breakindent = true
-vim.opt.undofile = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.signcolumn = "yes"
-vim.opt.updatetime = 250
-vim.opt.timeoutlen = 300
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.list = true
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.mouse = "a"
+vim.o.showmode = false
+vim.schedule(function() vim.o.clipboard = "unnamedplus" end)
+vim.o.breakindent = true
+vim.o.undofile = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.signcolumn = "yes"
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
+vim.o.splitright = true
+vim.o.splitbelow = true
+vim.o.list = true
 vim.opt.listchars = { tab = "│ ", trail = "·", nbsp = "␣" }
 vim.opt.fillchars = { eob = " " }
-vim.opt.inccommand = "split"
-vim.opt.cursorline = true
-vim.opt.scrolloff = 10
-vim.opt.expandtab = false
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.breakindent = true
+vim.o.inccommand = "split"
+vim.o.cursorline = true
+vim.o.scrolloff = 10
+vim.o.expandtab = false
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
+vim.o.breakindent = true
 
 --- KEYMAPS ---
 -- Todo-comments
