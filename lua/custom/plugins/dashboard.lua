@@ -86,7 +86,7 @@ return {
 							key = "c",
 							key_format = " %s", -- remove default surrounding `[]`
 							--action = 'Telescope find_files cwd=~/.config/nvim',
-							action = "Oil ~/.config/nvim",
+							action = 'lua require("oil").open(vim.fn.stdpath("config"))',
 						},
 						{
 							icon = "  ",
